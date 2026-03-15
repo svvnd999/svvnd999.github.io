@@ -224,17 +224,57 @@ margin-bottom:10px;
 }
 
 </style>
+     .menu-icon{
+display:none;
+font-size:26px;
+color:white;
+cursor:pointer;
+}
+
+.nav-links{
+display:flex;
+gap:15px;
+}
+
+@media (max-width:768px){
+
+.menu-icon{
+display:block;
+text-align:center;
+}
+
+.nav-links{
+display:none;
+flex-direction:column;
+align-items:center;
+background:#0f172a;
+padding:15px;
+}
+
+.nav-links.show{
+display:flex;
+}
+
+}
     
 
 </head>
 
 <body>
-  <nav class="navbar">
+  <div class="navbar">
+
+<div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+<div class="nav-links" id="navLinks">
 <a href="#home">Home</a>
 <a href="#about">About</a>
 <a href="#skills">Skills</a>
 <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
+<a href="#contact">Contact</a>
+<a href="resume.pdf">Resume</a>
+</div>
+
+</div>
 </a>
 </p> 
 <a href="Sai_Raghava_Reddy_Sathi_Resume.pdf" target="_blank">Resume</a>
@@ -328,6 +368,12 @@ https://github.com/svvnd999
 </a>
 </p>
 <p class="footer">Thank you for visiting.</p>
+   <script>
+function toggleMenu(){
+var menu = document.getElementById("navLinks");
+menu.classList.toggle("show");
+}
+</script>
 
 </div>
 
